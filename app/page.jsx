@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { CiSearch } from "react-icons/ci";
 
-export default function page() {
+export default function Usepage() {
   const [city, setcity] = useState("dhaka");
   const [weather, setweather] = useState({
     current: "",
