@@ -1,5 +1,6 @@
 import CurrencyAPI from "@everapi/currencyapi-js";
 import React, { useEffect, useState } from "react";
+import { FaExchangeAlt } from "react-icons/fa";
 
 export default function Currencyconverter() {
   const [currency, setcurrency] = useState({
@@ -58,7 +59,7 @@ export default function Currencyconverter() {
     <option value="BGN">BGN</option>
     <option value="BHD">BHD</option>
 </select>
-<p className="w-[5%]">TO</p>
+<p className="w-[5%] text-green-400"><FaExchangeAlt/></p>
 <select onChange={(e)=>handlechange(e.target.value,"to")} value={currency.to} className="w-[45%] py-2 rounded-sm outline-none" >
 <option value="BDT">BDT</option>
 <option value="USD">USD</option>
