@@ -14,7 +14,7 @@ export default function Usepage() {
 
   useEffect(() => {
     const apiKey = "cb09024a151644b49b954945241510";
-    const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
     const Weatherfunc = async () => {
       try {
         const res = await fetch(apiUrl);
