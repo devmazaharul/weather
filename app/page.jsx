@@ -21,7 +21,7 @@ export default function Usepage() {
         const res = await fetch(apiUrl);
         if (res.ok) {
           const { current, location } = await res.json();
-          
+
           setweather({
             ...weather,
             current,
@@ -63,71 +63,59 @@ export default function Usepage() {
     "December",
   ];
 
-
-  const var1="বেঁচে আছি এর চেয়ে বড় পাওয়া আর কি হতে পারে। "
-  const var2="একাকীত্ব, মানুষকে নতুন করে নিজেকে আবিষ্কার করতে সুযোগ করে দেয়। "
-  var abc="╰⊱♥⊱╮ মন যেটা চায় সেটা না পেলেই অসুখী মনে হয়। ╰⊱♥⊱╮"
-  let a="নির্জনতা আনন্দদায়ক। একাকীত্ব নয়।"
-
   return (
-<div className=" md:w-[30%] w-[90%] mx-auto">
-<div className="capitalize my-6">
-      <h1 className="text-xl font-bold text-center py-3">Hellow, Weather </h1>
-      <div className="md:w-[60%] mx-auto w-[100%] flex items-center justify-between border px-3  m-1 rounded-md">
-        <input
-          className="  m-2 outline-none w-full mx-auto"
-          placeholder="City Name"
-          type="text"
-          onChange={(e) => setcity(e.target.value)}
-        />
-        <p className="text-green-600 text-lg font-bold">
-          {" "}
-          <CiSearch />
-        </p>
-      </div>
-
-      <div className="bg-gradient-to-r p-3 from-sky-200  to-blue-300 mx-auto  items-center rounded-sm">
-        <b> {today[new Date().getDay()]}</b>
-        <p className="text-gray-700">
-          {new Date().getDate()}, {currentMonth[new Date().getMonth()]}
-        </p>
-        <h1>
-          {weather.location.name}, {weather.location.country},{" "}
-          {weather.location.tz_id}
-        </h1>
-        <div className="flex items-center  justify-between py-2">
-          <div>
-            <p className="text-4xl font-semibold">
-              {" "}
-              {weather.current.temp_c} <sup>°</sup> C
-            </p>
-            <small className="text-lg ">
-              {" "}
-              {weather.current.condition?.text}
-            </small>
-          </div>
-
-          <Image
-            src={newpath && newpath}
-            height={120}
-            alt="weather image"
-            width={120}
+    <div className=" md:w-[30%] w-[90%] mx-auto">
+      <div className="capitalize my-6">
+        <h1 className="text-xl font-bold text-center py-3">Hellow, Weather </h1>
+        <div className="md:w-[60%] mx-auto w-[100%] flex items-center justify-between border px-3  m-1 rounded-md">
+          <input
+            className="  m-2 outline-none w-full mx-auto"
+            placeholder="City Name"
+            type="text"
+            onChange={(e) => setcity(e.target.value)}
           />
+          <p className="text-green-600 text-lg font-bold">
+            {" "}
+            <CiSearch />
+          </p>
         </div>
 
-        <small>developed by Mazaharul Islam</small>
+        <div className="bg-gradient-to-r p-3 from-sky-200  to-blue-300 mx-auto  items-center rounded-sm">
+          <b> {today[new Date().getDay()]}</b>
+          <p className="text-gray-700">
+            {new Date().getDate()}, {currentMonth[new Date().getMonth()]}
+          </p>
+          <h1>
+            {weather.location.name}, {weather.location.country},{" "}
+            {weather.location.tz_id}
+          </h1>
+          <div className="flex items-center  justify-between py-2">
+            <div>
+              <p className="text-4xl font-semibold">
+                {" "}
+                {weather.current.temp_c} <sup>°</sup> C
+              </p>
+              <small className="text-lg ">
+                {" "}
+                {weather.current.condition?.text}
+              </small>
+            </div>
+
+            <Image
+              src={newpath && newpath}
+              height={120}
+              alt="weather image"
+              width={120}
+            />
+          </div>
+
+          <small>developed by Mazaharul Islam</small>
+        </div>
+      </div>
+
+      <div>
+        <Currencyconverter />
       </div>
     </div>
-
-
-
-
-
-<div>
-
-  <Currencyconverter/>
-</div>
-
-</div>
   );
 }
