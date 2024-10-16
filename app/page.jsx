@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CiSearch } from "react-icons/ci";
 
 import toast from "react-hot-toast";
+import Currencyconverter from "./(currency)/Currencyconverter";
 
 export default function Usepage() {
   const [city, setcity] = useState("khulna");
@@ -20,6 +21,7 @@ export default function Usepage() {
         const res = await fetch(apiUrl);
         if (res.ok) {
           const { current, location } = await res.json();
+          
           setweather({
             ...weather,
             current,
@@ -61,8 +63,15 @@ export default function Usepage() {
     "December",
   ];
 
+
+  const var1="বেঁচে আছি এর চেয়ে বড় পাওয়া আর কি হতে পারে। "
+  const var2="একাকীত্ব, মানুষকে নতুন করে নিজেকে আবিষ্কার করতে সুযোগ করে দেয়। "
+  var abc="╰⊱♥⊱╮ মন যেটা চায় সেটা না পেলেই অসুখী মনে হয়। ╰⊱♥⊱╮"
+  let a="নির্জনতা আনন্দদায়ক। একাকীত্ব নয়।"
+
   return (
-    <div className="capitalize md:w-[30%] w-[90%] mx-auto my-6">
+<div className=" md:w-[30%] w-[90%] mx-auto">
+<div className="capitalize my-6">
       <h1 className="text-xl font-bold text-center py-3">Hellow, Weather </h1>
       <div className="md:w-[60%] mx-auto w-[100%] flex items-center justify-between border px-3  m-1 rounded-md">
         <input
@@ -109,5 +118,16 @@ export default function Usepage() {
         <small>developed by Mazaharul Islam</small>
       </div>
     </div>
+
+
+
+
+
+<div>
+
+  <Currencyconverter/>
+</div>
+
+</div>
   );
 }
